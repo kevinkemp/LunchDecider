@@ -23,6 +23,7 @@ namespace LunchDecider
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            BootstrapSupport.BootstrapBundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

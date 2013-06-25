@@ -28,7 +28,8 @@ namespace LunchDecider
             bundles.Add(new ScriptBundle("~/bundles/lunchDecider").Include(
                 "~/app/lunchDecider.app.js", // must be first
                 "~/app/lunchDecider.restaurantService.js",
-                "~/app/lunchDecider.controller.js"
+                "~/app/lunchDecider.controller.js",
+                "~/app/restaurantDetails.directive.js"
                 ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

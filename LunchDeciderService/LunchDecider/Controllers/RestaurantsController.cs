@@ -7,11 +7,13 @@ namespace LunchDecider.Controllers {
         {
             new Restaurant
             {
-                Name = "McDonalds"
+                Name = "McDonalds",
+                Distance = 3.2
             },
             new Restaurant
             {
-                Name = "Burger King"
+                Name = "Burger King",
+                Distance = 1.8
             }
         };
         // GET api/restaurants
@@ -39,5 +41,6 @@ namespace LunchDecider.Controllers {
 
     public class Restaurant {
         public string Name { get; set; }
+        public double Distance { get; set; }
     }
 }
