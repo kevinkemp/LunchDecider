@@ -1,0 +1,64 @@
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\LunchDeciderApi.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\LunchDeciderApi.pdb
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\Antlr3.Runtime.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\EntityFramework.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\Microsoft.Web.Infrastructure.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\Newtonsoft.Json.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Net.Http.Formatting.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Helpers.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.WebHost.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Mvc.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Optimization.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Providers.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Razor.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Deployment.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Razor.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\WebGrease.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\EntityFramework.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\Newtonsoft.Json.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Net.Http.Formatting.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Helpers.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.WebHost.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Mvc.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.Razor.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Deployment.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Razor.xml
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\obj\Debug\LunchDeciderApi.csprojResolveAssemblyReference.cache
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\obj\Debug\LunchDeciderApi.dll
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi\obj\Debug\LunchDeciderApi.pdb
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\LunchDeciderApi.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\LunchDeciderApi.pdb
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\Antlr3.Runtime.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\EntityFramework.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\Microsoft.Web.Infrastructure.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\Newtonsoft.Json.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Net.Http.Formatting.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Helpers.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.WebHost.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Mvc.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Optimization.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Providers.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Razor.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Deployment.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Razor.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\WebGrease.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\EntityFramework.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\Newtonsoft.Json.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Net.Http.Formatting.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Helpers.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Http.WebHost.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Mvc.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.Razor.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Deployment.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\bin\System.Web.WebPages.Razor.xml
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\obj\Debug\LunchDeciderApi.csprojResolveAssemblyReference.cache
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\obj\Debug\LunchDeciderApi.dll
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi\obj\Debug\LunchDeciderApi.pdb

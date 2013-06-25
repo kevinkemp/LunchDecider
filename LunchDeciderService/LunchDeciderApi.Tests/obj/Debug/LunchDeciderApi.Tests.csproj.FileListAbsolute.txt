@@ -1,0 +1,2 @@
+c:\users\kkemp\documents\visual studio 2012\Projects\LunchDeciderService\LunchDeciderApi.Tests\obj\Debug\LunchDeciderApi.Tests.csprojResolveAssemblyReference.cache
+C:\dev\GitHub\LunchDecider\LunchDeciderService\LunchDeciderApi.Tests\obj\Debug\LunchDeciderApi.Tests.csprojResolveAssemblyReference.cache
