@@ -1,3 +1,3 @@
-﻿lunchDecider.controller('RestaurantController', ['$scope', function ($scope) {
-
+﻿lunchDecider.controller('RestaurantController', ['$scope', 'RestaurantsService', function ($scope, RestaurantsService) {
+    $scope.restaurants = RestaurantsService.query();
 }]);

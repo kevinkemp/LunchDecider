@@ -1,4 +1,4 @@
-﻿lunchDecider.factory("RestaurantService", function ($resource) {
+﻿lunchDecider.factory("RestaurantsService", function ($resource) {
     return $resource(
         "/api/Restaurants/:Id",
         { Id: "@Id" },

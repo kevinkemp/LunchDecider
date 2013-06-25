@@ -1,4 +1,4 @@
-﻿window.lunchDecider = angular.module('lunchDecider', []);
+﻿window.lunchDecider = angular.module('lunchDecider', ['ngResource']);
 
 lunchDecider.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
