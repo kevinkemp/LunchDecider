@@ -98,7 +98,6 @@ namespace NavigationRoutes
                 controllerName = controllerName.Remove(controllerName.Length - 10, 10);
             }
 
-            ;
             route.Defaults = LinkBuilder.BuildParameterValuesFromExpression(body) ?? new RouteValueDictionary();
             foreach (var pair in route.Defaults.Where(x => x.Value == null).ToList())
                 route.Defaults.Remove(pair.Key);

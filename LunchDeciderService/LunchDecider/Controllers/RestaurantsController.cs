@@ -3,17 +3,19 @@ using System.Linq;
 using System.Web.Http;
 
 namespace LunchDecider.Controllers {
+    using LunchDecider.Models;
+
     public class RestaurantsController : ApiController {
         readonly IEnumerable<Restaurant> Restaurants = new List<Restaurant>
         {
             new Restaurant
             {
-                Name = "McDonalds",
+                Name = RestaurantOptions.McDonalds,
                 Distance = 3.2
             },
             new Restaurant
             {
-                Name = "Burger King",
+                Name = RestaurantOptions.BurgerKing,
                 Distance = 1.8
             }
         };
@@ -40,10 +42,5 @@ namespace LunchDecider.Controllers {
         // DELETE api/values/5
         public void Delete(int id) {
         }
-    }
-
-    public class Restaurant {
-        public string Name { get; set; }
-        public double Distance { get; set; }
     }
 }
