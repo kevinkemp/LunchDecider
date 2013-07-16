@@ -119,4 +119,5 @@ ModelManifest.xml
 
 *.suo
 *.ncrunchsolution
-LunchDeciderService\LunchDecider\obj\*
+bin
+obj
