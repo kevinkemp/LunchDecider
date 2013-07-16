@@ -7,25 +7,25 @@
 
     public class VoteSessionsController : ApiController
     {
-        readonly IEnumerable<VoteSession> voteSessions = new List<VoteSession>
+        static readonly IEnumerable<VoteSession> voteSessions = new List<VoteSession>
                                                              {
                                                                  new VoteSession
                                                                      {
                                                                          Name = "Team1",
-                                                                         Votes = new List<Vote> {
-                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
+                                                                         VoteOptions = new List<VoteOption> {
+                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
                                                                                                                     Distance = 4.2}},
-                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
+                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
                                                                                                                     Distance = 5.7}}
                                                                          }
                                                                      },
                                                                  new VoteSession
                                                                      {
                                                                          Name = "Team2",
-                                                                         Votes = new List<Vote> {
-                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
+                                                                         VoteOptions = new List<VoteOption> {
+                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
                                                                                                                     Distance = 4.2}},
-                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
+                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
                                                                                                                     Distance = 5.7}}
                                                                      }
                                                                  }
@@ -63,7 +63,7 @@
         }
     }
 
-    public class RestaurantOptions
+    public static class RestaurantOptions
     {
         public static string McDonalds = "McDonalds";
         public static string BurgerKing = "Burger King";

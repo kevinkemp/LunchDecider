@@ -1,19 +1,17 @@
 ﻿var scope;
-var voteSessionObj;
 
 lunchDecider.controller('RestaurantController', ['$scope', 'VoteSessionsService', '$location', function ($scope, VoteSessionsService, $location) {
-    
     var voteSessionName = $location.search().voteSession;
-    VoteSessionsService.get({ Name: voteSessionName }, function (voteSession) {
-        voteSessionObj = voteSession;
-        $scope.restaurants = _.map(voteSession.votes, function (vote) { return vote.restaurant; });
-    });
     scope = $scope;
+    VoteSessionsService.get({ Name: voteSessionName }, function (voteSession) {
+        $scope.restaurants = _.map(voteSession.voteOptions, function (voteOption) { return voteOption.restaurant; });
+        $scope.voteOptions = voteSession.voteOptions;
+    });
+    
     $scope.vote = function() {
         _.each($scope.restaurants, function(restaurant) {
             if (restaurant.isSelected) {
-                VoteSessionsService.update({ Id: voteSessionName },restaurant);
-                //, Restaurant: restaurant});
+                VoteSessionsService.update({ voteSessionId: voteSessionName },restaurant);
             }
         });
     };

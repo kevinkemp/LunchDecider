@@ -1,0 +1,14 @@
+﻿<table class="table table-condensed table-striped">
+    <thead>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Total Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="voteOption in voteOptions">
+            <td>{{voteOption.restaurant.name}}</td>
+            <td>{{voteOption.count}}</td>
+        </tr>
+    </tbody>
+</table>

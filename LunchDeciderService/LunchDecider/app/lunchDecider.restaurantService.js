@@ -10,7 +10,7 @@
 lunchDecider.factory("VoteSessionsService", function ($resource) {
     return $resource(
         "/api/VoteSessions/:Id",
-        { Id: "@Id" },
-        { "update": { method: "PUT", params: { Id: "@Id" } } }
+        { Id: "@voteSessionId" },
+        { "update": { method: "PUT", params: { voteSessionId: "@Id" } } }
    );
 });

@@ -6,12 +6,12 @@
     public class VoteSession
     {
         public string Name { get; set; }
-        public IEnumerable<Vote> Votes { get; set; }
+        public IEnumerable<VoteOption> VoteOptions { get; set; }
 
         public void AddVote(Restaurant restaurant)
         {
             //TODO:handle error for invalid restaurant
-            var matchingVote = Votes.SingleOrDefault(x => x.Restaurant.Equals(restaurant));
+            var matchingVote = VoteOptions.SingleOrDefault(x => x.Restaurant.Equals(restaurant));
             if (matchingVote != null)
             {
                 matchingVote.IncrementVote();
@@ -19,7 +19,7 @@
         }
     }
 
-    public class Vote
+    public class VoteOption
     {
         public Restaurant Restaurant { get; set; }
         public int Count { get; set; }
