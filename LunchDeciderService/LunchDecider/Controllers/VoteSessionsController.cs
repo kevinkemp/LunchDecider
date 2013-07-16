@@ -3,8 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Http;
-
-    using LunchDecider.Models;
+    using Models;
 
     public class VoteSessionsController : ApiController
     {
@@ -12,47 +11,50 @@
                                                              {
                                                                  new VoteSession
                                                                      {
-                                                                         Name = "Team 1",
+                                                                         Name = "Team1",
                                                                          Votes = new List<Vote> {
-                                                                             new Vote{Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds}},
-                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing}}
+                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
+                                                                                                                    Distance = 4.2}},
+                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
+                                                                                                                    Distance = 5.7}}
                                                                          }
                                                                      },
                                                                  new VoteSession
                                                                      {
-                                                                         Name = "Team 2",
+                                                                         Name = "Team2",
                                                                          Votes = new List<Vote> {
-                                                                             new Vote{Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds}},
-                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing}
-                                                                         }
+                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
+                                                                                                                    Distance = 4.2}},
+                                                                             new Vote {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
+                                                                                                                    Distance = 5.7}}
                                                                      }
                                                                  }
                                                              };
         // GET api/restaurants
         public IEnumerable<VoteSession> Get()
         {
-            return this.voteSessions;
+            return voteSessions;
         }
 
         // GET api/values/5
         public VoteSession Get(string Name)
         {
-            return this.voteSessions.SingleOrDefault(x => x.Name.Equals(Name));
+            return voteSessions.SingleOrDefault(x => x.Name.Equals(Name));
         }
 
         // POST api/values
         public void Post(string name, [FromBody]Restaurant value)
         {
-            var matchingVoteSession = this.voteSessions.FirstOrDefault(x => x.Name == value.Name);
-            matchingVoteSession.AddVote(value);
+            
         }
 
         // PUT api/values/5
-        public void Put(string Id, [FromBody]Restaurant restaurant)
+        public void Put(string voteSessionId, [FromBody]Restaurant restaurant)
         {
-            var matchingVoteSession = this.voteSessions.FirstOrDefault(x => x.Name == Id);
-            matchingVoteSession.AddVote(restaurant);
-            
+            var matchingVoteSession = voteSessions.FirstOrDefault(x => x.Name == voteSessionId);
+            if (matchingVoteSession != null) {
+                matchingVoteSession.AddVote(restaurant);
+            }
         }
 
         // DELETE api/values/5
