@@ -7,5 +7,5 @@ lunchDecider.config(['$routeProvider', '$locationProvider', function ($routeProv
         when('/selectRestaurant', { templateUrl: 'app/selectRestaurant.view.html', controller: 'RestaurantController' }).
         when('/restaurantDetails', { templateUrl: 'app/restaurantDetails.view.html' }).
         otherwise({ redirectTo: '/voteSessions' });
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
 }]);

@@ -2,13 +2,13 @@
 var voteSessionObj;
 
 lunchDecider.controller('RestaurantController', ['$scope', 'VoteSessionsService', '$location', function ($scope, VoteSessionsService, $location) {
-    "use strict";
+    
     var voteSessionName = $location.search().voteSession;
     VoteSessionsService.get({ Name: voteSessionName }, function (voteSession) {
         voteSessionObj = voteSession;
         $scope.restaurants = _.map(voteSession.votes, function (vote) { return vote.restaurant; });
     });
-    
+    scope = $scope;
     $scope.vote = function() {
         _.each($scope.restaurants, function(restaurant) {
             if (restaurant.isSelected) {
