@@ -13,12 +13,10 @@ namespace LunchDecider.Data {
             return (TypeToGet)result.GetValue(null);
         }
 
-        public static IEnumerable<TypeToGet> All {
-            get {
-                var publicStaticFields = typeof (TypeToGet).GetFields(BindingFlags.Public | BindingFlags.Static).Where(x => x.FieldType == typeof (TypeToGet));
-                var result = publicStaticFields.Select(x => (TypeToGet) x.GetValue(null));
-                return result;
-            }
+        protected static IEnumerable<TypeToGet> All(Type strongEnumType) {
+            var publicStaticFields = strongEnumType.GetFields(BindingFlags.Public | BindingFlags.Static).Where(x => x.FieldType == typeof(TypeToGet));
+            var result = publicStaticFields.Select(x => (TypeToGet)x.GetValue(null));
+            return result;
         }
     }
 }

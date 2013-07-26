@@ -1,10 +1,16 @@
 using System;
+using System.Collections.Generic;
 using LunchDecider.Controllers;
 using LunchDecider.Models;
 
 namespace LunchDecider.Data {
     public class Restaurants : StrongEnum<Restaurant> {
         static readonly Random Random = new Random();
+        public static IEnumerable<Restaurant> All {
+            get {
+                return All(typeof(Restaurants));
+            }
+        }
         public static readonly Restaurant McDonalds = new Restaurant
         {
             Name = RestaurantOptions.McDonalds,
