@@ -1,4 +1,6 @@
-﻿namespace LunchDecider.Controllers
+﻿using LunchDecider.Data;
+
+namespace LunchDecider.Controllers
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -12,23 +14,13 @@
                                                                  new VoteSession
                                                                      {
                                                                          Name = "Team1",
-                                                                         VoteOptions = new List<VoteOption> {
-                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
-                                                                                                                    Distance = 4.2}},
-                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
-                                                                                                                    Distance = 5.7}}
-                                                                         }
+                                                                         VoteOptions = VoteOptions.All()
                                                                      },
                                                                  new VoteSession
                                                                      {
                                                                          Name = "Team2",
-                                                                         VoteOptions = new List<VoteOption> {
-                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.McDonalds,
-                                                                                                                    Distance = 4.2}},
-                                                                             new VoteOption {Restaurant = new Restaurant {Name = RestaurantOptions.BurgerKing,
-                                                                                                                    Distance = 5.7}}
+                                                                         VoteOptions = VoteOptions.All()
                                                                      }
-                                                                 }
                                                              };
         // GET api/restaurants
         public IEnumerable<VoteSession> Get()
@@ -65,7 +57,12 @@
 
     public static class RestaurantOptions
     {
-        public static string McDonalds = "McDonalds";
-        public static string BurgerKing = "Burger King";
+        public static readonly string McDonalds = "McDonalds";
+        public static readonly string BurgerKing = "Burger King";
+        public static readonly string Lennys = "Lenny's Sub Shop";
+        public static readonly string PandaExpress = "Panda Express";
+        public static readonly string Moes = "Moe's Southwest Grill";
+        public static readonly string ButcherShop = "The Butcher Shop";
+        public static readonly string NewChina = "New China";
     }
 }

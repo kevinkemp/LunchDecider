@@ -208,23 +208,17 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BootstrapSupport\ControlGroupExtensions.cs" />
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BootstrapBaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RestaurantsController.cs" />
-    <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Controllers\VoteSessionsController.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Data\StrongEnum.cs" />
+    <Compile Include="Data\Restaurants.cs" />
+    <Compile Include="Data\VoteOptions.cs" />
     <Compile Include="Filters\ValidateHttpAntiForgeryTokenAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Restaurant.cs" />
-    <Compile Include="Models\TodoList.cs" />
-    <Compile Include="Models\TodoItem.cs" />
-    <Compile Include="Models\TodoItemContext.cs" />
-    <Compile Include="Models\TodoRepository.cs" />
     <Compile Include="Models\VoteSession.cs" />
     <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />
     <Compile Include="NavigationRoutes\NamedRoute.cs" />

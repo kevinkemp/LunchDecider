@@ -1,0 +1,16 @@
+﻿using System.Collections.Generic;
+using LunchDecider.Models;
+
+namespace LunchDecider.Data {
+    public static class VoteOptions {
+        public static IEnumerable<VoteOption> All() {
+            foreach (var restaurant in Restaurants.All) {
+                yield return new VoteOption
+                {
+                    Count = 0,
+                    Restaurant = restaurant
+                };
+            }
+        }
+    }
+}
