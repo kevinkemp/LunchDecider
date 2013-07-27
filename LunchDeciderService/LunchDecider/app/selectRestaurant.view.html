@@ -1,5 +1,20 @@
 ﻿<p class="error" data-ng-show="error">{{error}}</p>
-<div ng-repeat="restaurant in restaurants">
-    <restaurant-details></restaurant-details>
-</div>
-<button ng-click="vote()">Vote!</button>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <th><h4>Restaurant Name <input type="text" ng-model="restaurantFilterText"/></h4></th>
+            <th><h4>Distance</h4></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="restaurant in restaurants | filter:restaurantFilterText | orderBy:'distance'">
+            <td><input class="pull-left" name="restaurantOptions" value="{{restaurant.name}}" type="radio" ng-checked="restaurant.isSelected" ng-model="restaurant.isSelected"/></td>
+            <td><h5 class="span2">{{restaurant.name}}</h5></td>
+            <td><h5 class="span2">{{restaurant.distance.toFixed(2)}} miles</h5></td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<button class="btn" ng-click="vote()">Vote!</button>

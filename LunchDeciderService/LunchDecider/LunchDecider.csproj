@@ -226,8 +226,6 @@
     <Compile Include="NavigationRoutes\NavigationRouteConfigurationExtensions.cs" />
     <Compile Include="NavigationRoutes\NavigationRouteFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="app\restaurantDetails.directive.js" />
-    <Content Include="app\restaurantDetails.view.html" />
     <Content Include="app\voteSessionDetails.view.html" />
     <Content Include="app\voteSessions.view.html" />
     <Content Include="Content\body.css" />
