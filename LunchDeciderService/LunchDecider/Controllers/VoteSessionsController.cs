@@ -1,4 +1,5 @@
-﻿using LunchDecider.Data;
+﻿using System;
+using LunchDecider.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -24,6 +25,8 @@ namespace LunchDecider.Controllers
             if (VoteSessions.All(x => x.Name != voteSession.Name)) {
                 voteSession.VoteOptions = VoteOptions.All();
                 VoteSessions.Add(voteSession);
+            } else {
+                throw new Exception("Vote session with that name already exists");
             }
         }
 

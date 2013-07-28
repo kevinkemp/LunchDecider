@@ -23,7 +23,18 @@ lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsServic
     window.scope = $scope;
     $scope.voteSessions = VoteSessionsService.query();
     $scope.createVoteSession = function () {
-        VoteSessionsService.save({ Name: $scope.newVoteSessionName });
-        $scope.voteSessions.push({ name: $scope.newVoteSessionName });
+        var newVoteSession = { Name: $scope.newVoteSessionName };
+        $scope.voteSessions.push({ name: newVoteSession.Name });
+        VoteSessionsService.save(newVoteSession,
+        function (success) {
+            if (console) {
+                console.log('successfully saved vote session');
+            }
+        }, function (error) {
+            $scope.voteSessions.pop();
+            if (console) {
+                console.log('failed to save vote session');
+            }
+        });
     };
 }]);
