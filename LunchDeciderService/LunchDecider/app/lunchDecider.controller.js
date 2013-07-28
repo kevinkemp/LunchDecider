@@ -1,11 +1,11 @@
-﻿var scope;
-
-lunchDecider.controller('RestaurantController', ['$scope', 'VoteSessionsService', '$location', function ($scope, VoteSessionsService, $location) {
+﻿lunchDecider.controller('RestaurantController', ['$scope', 'VoteSessionsService', '$location', function ($scope, VoteSessionsService, $location) {
+    window.scope = $scope;
     var voteSessionName = $location.search().voteSession;
     $scope.voteSessionName = voteSessionName;
-    scope = $scope;
-    VoteSessionsService.get({ Name: voteSessionName }, function (voteSession) {
-        $scope.restaurants = _.map(voteSession.voteOptions, function (voteOption) { return voteOption.restaurant; });
+    VoteSessionsService.get({ name: voteSessionName }, function (voteSession) {
+        $scope.restaurants = _.map(voteSession.voteOptions, function(voteOption) {
+             return voteOption.restaurant;
+        });
         $scope.voteOptions = voteSession.voteOptions;
     });
     
@@ -20,8 +20,10 @@ lunchDecider.controller('RestaurantController', ['$scope', 'VoteSessionsService'
 }]);
 
 lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsService', function ($scope, VoteSessionsService) {
+    window.scope = $scope;
     $scope.voteSessions = VoteSessionsService.query();
-    //$scope.addVoteSession = function (name) {
-    //    VoteSessionsService.update({ Name: name, Restaurant:  });
-    //};
+    $scope.createVoteSession = function () {
+        VoteSessionsService.save({ Name: $scope.newVoteSessionName });
+        $scope.voteSessions.push({ name: $scope.newVoteSessionName });
+    };
 }]);

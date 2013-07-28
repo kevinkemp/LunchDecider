@@ -1,68 +1,42 @@
 ﻿using LunchDecider.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http;
+using LunchDecider.Models;
 
 namespace LunchDecider.Controllers
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Http;
-    using Models;
-
     public class VoteSessionsController : ApiController
     {
-        static readonly IEnumerable<VoteSession> voteSessions = new List<VoteSession>
-                                                             {
-                                                                 new VoteSession
-                                                                     {
-                                                                         Name = "Team1",
-                                                                         VoteOptions = VoteOptions.All()
-                                                                     },
-                                                                 new VoteSession
-                                                                     {
-                                                                         Name = "Team2",
-                                                                         VoteOptions = VoteOptions.All()
-                                                                     }
-                                                             };
-        // GET api/restaurants
+        static readonly List<VoteSession> VoteSessions = new List<VoteSession>();
+
         public IEnumerable<VoteSession> Get()
         {
-            return voteSessions;
+            return VoteSessions;
         }
 
-        // GET api/values/5
-        public VoteSession Get(string Name)
+        public VoteSession Get(string name)
         {
-            return voteSessions.SingleOrDefault(x => x.Name.Equals(Name));
+            return VoteSessions.SingleOrDefault(x => x.Name.Equals(name));
         }
 
-        // POST api/values
-        public void Post(string name, [FromBody]Restaurant value)
-        {
-            
+        public void Post([FromBody]VoteSession voteSession) {
+            if (VoteSessions.All(x => x.Name != voteSession.Name)) {
+                voteSession.VoteOptions = VoteOptions.All();
+                VoteSessions.Add(voteSession);
+            }
         }
 
-        // PUT api/values/5
         public void Put(string voteSessionId, [FromBody]Restaurant restaurant)
         {
-            var matchingVoteSession = voteSessions.FirstOrDefault(x => x.Name == voteSessionId);
+            var matchingVoteSession = VoteSessions.FirstOrDefault(x => x.Name == voteSessionId);
             if (matchingVoteSession != null) {
                 matchingVoteSession.AddVote(restaurant);
             }
         }
 
-        // DELETE api/values/5
         public void Delete(int id)
         {
         }
-    }
-
-    public static class RestaurantOptions
-    {
-        public static readonly string McDonalds = "McDonalds";
-        public static readonly string BurgerKing = "Burger King";
-        public static readonly string Lennys = "Lenny's Sub Shop";
-        public static readonly string PandaExpress = "Panda Express";
-        public static readonly string Moes = "Moe's Southwest Grill";
-        public static readonly string ButcherShop = "The Butcher Shop";
-        public static readonly string NewChina = "New China";
     }
 }

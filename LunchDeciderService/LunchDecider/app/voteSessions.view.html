@@ -1,5 +1,8 @@
 ﻿<div>
     <div ng-repeat="voteSession in voteSessions">
-        <a href="#/selectRestaurant?voteSession={{voteSession.name}}">{{voteSession.name}}</a>
+        <h3><a href="#/selectRestaurant?voteSession={{voteSession.name}}">{{voteSession.name}}</a></h3>
+    </div>
+    <div>
+        <input type="text" ng-model="newVoteSessionName"/><button class="btn" ng-click="createVoteSession()">Create Vote Session</button>
     </div>
 </div>

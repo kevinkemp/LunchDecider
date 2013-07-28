@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using LunchDecider.Data;
 
 namespace LunchDecider.Controllers {
     using LunchDecider.Models;

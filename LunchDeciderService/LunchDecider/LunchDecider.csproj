@@ -211,6 +211,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RestaurantsController.cs" />
     <Compile Include="Controllers\VoteSessionsController.cs" />
+    <Compile Include="Data\RestaurantOptions.cs" />
     <Compile Include="Data\StrongEnum.cs" />
     <Compile Include="Data\Restaurants.cs" />
     <Compile Include="Data\VoteOptions.cs" />
