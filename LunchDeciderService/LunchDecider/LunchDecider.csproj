@@ -261,7 +261,7 @@
     <Content Include="app\ajaxlogin.js" />
     <Content Include="app\lunchDecider.controller.js" />
     <Content Include="app\lunchDecider.app.js" />
-    <Content Include="app\lunchDecider.restaurantService.js" />
+    <Content Include="app\lunchDecider.service.js" />
     <Content Include="app\selectRestaurant.view.html" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
