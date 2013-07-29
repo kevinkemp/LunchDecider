@@ -9,10 +9,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="restaurant in restaurants | filter:restaurantFilterText | orderBy:'distance'">
-            <td><input class="pull-left" name="restaurantOptions" value="{{restaurant.name}}" type="radio" ng-checked="restaurant.isSelected" ng-model="restaurant.isSelected"/></td>
-            <td><h5 class="span2">{{restaurant.name}}</h5></td>
-            <td><h5 class="span2">{{restaurant.distance.toFixed(2)}} miles</h5></td>
+        <tr ng-repeat="restaurant in restaurants | filter:restaurantFilterText | orderBy:'Distance'">
+            <td><input class="pull-left" name="restaurantOptions" value="{{restaurant.Name}}" type="radio" ng-checked="restaurant.isSelected" ng-model="restaurant.isSelected"/></td>
+            <td><h5 class="span2">{{restaurant.Name}}</h5></td>
+            <td><h5 class="span2">{{restaurant.Distance.toFixed(2)}} miles</h5></td>
         </tr>
     </tbody>
 </table>

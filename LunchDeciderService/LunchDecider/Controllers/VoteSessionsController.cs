@@ -22,12 +22,11 @@ namespace LunchDecider.Controllers
         }
 
         public void Post([FromBody]VoteSession voteSession) {
-            if (VoteSessions.All(x => x.Name != voteSession.Name)) {
-                voteSession.VoteOptions = VoteOptions.All();
-                VoteSessions.Add(voteSession);
-            } else {
-                throw new Exception("Vote session with that name already exists");
+            if (voteSession.Name.ToUpper() == "badname".ToUpper()) {
+                throw new Exception("Bad vote session name");
             }
+            voteSession.VoteOptions = VoteOptions.All();
+            VoteSessions.Add(voteSession);
         }
 
         public void Put(string voteSessionId, [FromBody]Restaurant restaurant)
