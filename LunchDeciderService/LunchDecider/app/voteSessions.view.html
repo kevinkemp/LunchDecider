@@ -1,8 +1,15 @@
-﻿<div>
-    <div ng-repeat="voteSession in voteSessions">
-        <h3><a href="#/selectRestaurant?voteSession={{voteSession.Name}}">{{voteSession.Name}}</a></h3>
-    </div>
+﻿<form id="createVoteSessionForm">
     <div>
-        <input id="newVoteSessionNameInput" type="text" ng-model="newVoteSessionName"/> <button class="btn" ng-click="createVoteSession()">Create Vote Session</button>
+        <div ng-repeat="voteSession in voteSessions">
+            <h3><a href="#/selectRestaurant?voteSession={{voteSession.Name}}">{{voteSession.Name}}</a></h3>
+        </div>
+        <div>
+            <input id="newVoteSessionNameInput" type="text" ng-model="newVoteSessionName"/> <button class="btn" ng-click="createVoteSession()">Create Vote Session</button>
+        </div>
     </div>
-</div>
+</form>
+<script type="text/javascript">
+    $(function() {
+        $('#newVoteSessionNameInput').focus();
+    });
+</script>
