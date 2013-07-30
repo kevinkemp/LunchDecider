@@ -218,6 +218,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\RestErrorHandler.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\VoteSession.cs" />
     <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />

@@ -1,8 +1,8 @@
-﻿using System;
-using LunchDecider.Data;
+﻿using LunchDecider.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using LunchDecider.Helpers;
 using LunchDecider.Models;
 
 namespace LunchDecider.Controllers
@@ -22,8 +22,8 @@ namespace LunchDecider.Controllers
         }
 
         public void Post([FromBody]VoteSession voteSession) {
-            if (voteSession.Name.ToUpper() == "badname".ToUpper()) {
-                throw new Exception("Bad vote session name");
+            if (VoteSessions.Select(x => x.Name).Contains(voteSession.Name)) {
+                RestErrorHandler.ThrowRestException(string.Format("Name ({0}) already exists", voteSession.Name));
             }
             voteSession.VoteOptions = VoteOptions.All();
             VoteSessions.Add(voteSession);

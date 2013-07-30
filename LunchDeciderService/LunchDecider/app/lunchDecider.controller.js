@@ -35,12 +35,13 @@ lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsServic
                 }, function(error) {
                     //todo: fancy animation to show removal
                     $scope.voteSessions.pop(); //rollback the add
-                    if (console) {
-                        console.log('failed to save vote session');
-                    }
+                    toastr.error(error.data);
                 });
             //todo: wipe input from textbox
             //todo: set focus to input
+        }
+        else {
+            toastr.error("Vote session with name " + newVoteSession.Name + " already exists");
         }
     };
 }]);
