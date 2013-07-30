@@ -37,11 +37,11 @@ lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsServic
                     $scope.voteSessions.pop(); //rollback the add
                     toastr.error(error.data);
                 });
-            //todo: wipe input from textbox
             //todo: set focus to input
         }
         else {
             toastr.error("Vote session with name " + newVoteSession.Name + " already exists");
         }
+        $('#newVoteSessionNameInput').val('');
     };
 }]);
