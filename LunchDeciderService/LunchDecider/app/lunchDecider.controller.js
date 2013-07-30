@@ -13,15 +13,22 @@
         _.each($scope.restaurants, function(restaurant) {
             if (restaurant.isSelected) {
                 VoteSessionsService.update({ voteSessionId: voteSessionName }, restaurant);
-                window.location = "/#/voteSessionDetails?voteSession=" + voteSessionName;
+                window.location = "/#/voteSessionResultsList?voteSession=" + voteSessionName;
             }
         });
     };
 }]);
 
-lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsService', function ($scope, VoteSessionsService) {
+lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsService', '$location', function ($scope, VoteSessionsService, $location) {
     window.scope = $scope;
     $scope.voteSessions = VoteSessionsService.query();
+    $scope.voteSessionFilter = function (voteSession) {
+        var voteSessionQueryStringParameter = $location.search().voteSession;
+        if (!_.isUndefined(voteSessionQueryStringParameter)) {
+            return voteSession.Name == voteSessionQueryStringParameter;
+        }
+        return true;
+    };
     $scope.createVoteSession = function () {
         var newVoteSession = { Name: $scope.newVoteSessionName };
         var matchingVoteSession = _.findWhere($scope.voteSessions, { Name: newVoteSession.Name });

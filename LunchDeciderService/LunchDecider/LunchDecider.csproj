@@ -227,7 +227,9 @@
     <Compile Include="NavigationRoutes\NavigationRouteConfigurationExtensions.cs" />
     <Compile Include="NavigationRoutes\NavigationRouteFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="app\voteSessionDetails.view.html" />
+    <Content Include="app\voteSessionResults.directive.js" />
+    <Content Include="app\voteSessionResults.view.html" />
+    <Content Include="app\voteSessionResultsList.view.html" />
     <Content Include="app\voteSessions.view.html" />
     <Content Include="Content\body.css" />
     <Content Include="Content\bootstrap-mvc-validation.css" />

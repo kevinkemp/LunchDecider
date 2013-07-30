@@ -1,4 +1,4 @@
-﻿<h2>{{voteSessionName}}</h2>
+﻿<h2>{{voteSession.Name}}</h2>
 <table class="table table-condensed table-striped">
     <thead>
         <tr>
@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="voteOption in voteOptions">
+        <tr data-ng-repeat="voteOption in voteSession.VoteOptions">
             <td>{{voteOption.Restaurant.Name}}</td>
             <td>{{voteOption.Count}}</td>
         </tr>

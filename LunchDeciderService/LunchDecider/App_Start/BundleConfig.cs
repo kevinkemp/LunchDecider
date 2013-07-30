@@ -27,6 +27,7 @@ namespace LunchDecider
 
             bundles.Add(new ScriptBundle("~/bundles/lunchDecider").Include(
                 "~/app/lunchDecider.app.js", // must be first
+                "~/app/voteSessionResults.directive.js",
                 "~/app/lunchDecider.service.js",
                 "~/app/lunchDecider.controller.js"
                 ));
