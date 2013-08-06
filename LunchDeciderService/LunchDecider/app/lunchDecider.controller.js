@@ -1,8 +1,8 @@
-﻿lunchDecider.controller('RestaurantController', ['$scope', 'VoteSessionsService', '$location', function ($scope, VoteSessionsService, $location) {
+﻿lunchDecider.controller('RestaurantController', ['$scope', 'voteSessionsApi', '$location', function ($scope, voteSessionsApi, $location) {
     window.scope = $scope;
     var voteSessionName = $location.search().voteSession;
     $scope.voteSessionName = voteSessionName;
-    VoteSessionsService.get({ name: voteSessionName }, function (voteSession) {
+    voteSessionsApi.get({ name: voteSessionName }, function (voteSession) {
         $scope.restaurants = _.map(voteSession.VoteOptions, function(voteOption) {
              return voteOption.Restaurant;
         });
@@ -12,16 +12,17 @@
     $scope.vote = function() {
         _.each($scope.restaurants, function(restaurant) {
             if (restaurant.isSelected) {
-                VoteSessionsService.update({ voteSessionId: voteSessionName }, restaurant);
+                voteSessionsApi.update({ voteSessionId: voteSessionName }, restaurant);
                 window.location = "/#/voteSessionResultsList?voteSession=" + voteSessionName;
             }
         });
     };
 }]);
 
-lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsService', '$location', function ($scope, VoteSessionsService, $location) {
+lunchDecider.controller('VoteSessionsController', ['$scope', 'voteSessionsService', 'voteSessionsApi', '$location', function ($scope, voteSessionsService, voteSessionsApi, $location) {
     window.scope = $scope;
-    $scope.voteSessions = VoteSessionsService.query();
+    $scope.testValue = voteSessionsService.testValue;
+    $scope.voteSessions = voteSessionsApi.query();
     $scope.voteSessionFilter = function (voteSession) {
         var voteSessionQueryStringParameter = $location.search().voteSession;
         if (!_.isUndefined(voteSessionQueryStringParameter)) {
@@ -33,18 +34,14 @@ lunchDecider.controller('VoteSessionsController', ['$scope', 'VoteSessionsServic
         var newVoteSession = { Name: $scope.newVoteSessionName };
         var matchingVoteSession = _.findWhere($scope.voteSessions, { Name: newVoteSession.Name });
         if (_.isUndefined(matchingVoteSession)) {
-            $scope.voteSessions.push(newVoteSession);
-            VoteSessionsService.save(newVoteSession,
-                function(success) {
-                    if (console) {
-                        console.log('successfully saved vote session');
-                    }
-                }, function(error) {
-                    //todo: fancy animation to show removal
-                    $scope.voteSessions.pop(); //rollback the add
-                    toastr.error(error.data);
-                });
-            //todo: set focus to input
+            var success = function(success) {
+                $scope.voteSessions.push(newVoteSession);
+            };
+            var error = function(error) {
+                toastr.error(error.data);
+            };
+            voteSessionsService.createVoteSession(newVoteSession, success, error);
+            $('#newVoteSessionNameInput').focus();
         }
         else {
             toastr.error("Vote session with name " + newVoteSession.Name + " already exists");
