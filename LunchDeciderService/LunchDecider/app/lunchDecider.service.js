@@ -1,13 +1,4 @@
-﻿lunchDecider.factory("RestaurantsService", function ($resource) {
-    return $resource(
-        "/api/Restaurants/:Id",
-        { Id: "@Id" },
-        { "update": { method: "PUT" } }
-   );
-});
-
-
-lunchDecider.factory("voteSessionsApi", function ($resource) {
+﻿lunchDecider.factory("voteSessionsApi", function ($resource) {
     return $resource(
         "/api/VoteSessions/:Id",
         { Id: "@voteSessionId" },
@@ -16,20 +7,39 @@ lunchDecider.factory("voteSessionsApi", function ($resource) {
 });
 
 lunchDecider.factory("voteSessionsService", ['voteSessionsApi', function (voteSessionsApi) {
+    function log(message) {
+        if (console) {
+            console.log(message);
+        }
+    }
     var result = {};
+    result.getVoteSessions = function(success, error) {
+        return voteSessionsApi.query(function() {
+            if (success) success();
+            log('fetched all vote sessions!');
+        });
+    };
+    result.getVoteSession = function(params, success) {
+        return voteSessionsApi.get(params, function() {
+            if (success) success();
+            log('fetched vote session!');
+        });
+    };
+    result.vote = function(params, restaurant, success) {
+        return voteSessionsApi.update(params, restaurant, function() {
+            if (success) success();
+            log('updated restaurant vote count!');
+        });
+    };
     result.createVoteSession = function (newVoteSession, success, error) {
-        voteSessionsApi.save(newVoteSession,
+        return voteSessionsApi.save(newVoteSession,
             function(foo) {
-                success();
-                if (console) {
-                    console.log('success!');
-                }
+                if (success) success();
+                log("saved vote session!");
             },
             function (foo) {
-                error();
-                if (console) {
-                    console.log('error!');
-                }
+                if (error) error();
+                log('failed to save vote session!');
             });
     };
     return result;
