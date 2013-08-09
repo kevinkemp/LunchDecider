@@ -209,7 +209,6 @@
     <Compile Include="BootstrapSupport\ControlGroupExtensions.cs" />
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RestaurantsController.cs" />
     <Compile Include="Controllers\VoteSessionsController.cs" />
     <Compile Include="Data\RestaurantOptions.cs" />
     <Compile Include="Data\StrongEnum.cs" />
