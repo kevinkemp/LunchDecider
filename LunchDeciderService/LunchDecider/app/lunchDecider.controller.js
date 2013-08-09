@@ -44,7 +44,6 @@ lunchDecider.controller('VoteSessionsController', ['$scope', 'voteSessionsServic
         };
     });
     
-    
     $scope.voteSessionFilter = function (voteSession) {
         var voteSessionQueryStringParameter = $location.search().voteSession;
         if (!_.isUndefined(voteSessionQueryStringParameter)) {
