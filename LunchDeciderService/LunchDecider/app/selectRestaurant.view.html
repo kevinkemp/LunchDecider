@@ -12,7 +12,7 @@
         <tr data-ng-repeat="restaurant in restaurants | filter:restaurantFilterText | orderBy:'Distance'">
             <td><input class="pull-left" name="restaurantOptions" value="{{restaurant.Name}}" type="radio" data-ng-checked="restaurant.isSelected" data-ng-model="restaurant.isSelected"/></td>
             <td><h5 class="span2">{{restaurant.Name}}</h5></td>
-            <td><h5 class="span2">{{restaurant.Distance.toFixed(2)}} miles</h5></td>
+            <td><h5 class="span2">{{restaurant.Distance | number:2}} miles</h5></td>
         </tr>
     </tbody>
 </table>
