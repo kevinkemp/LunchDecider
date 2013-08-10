@@ -1,12 +1,9 @@
-﻿lunchDecider.factory("voteSessionsApi", function ($resource) {
-    return $resource(
+﻿lunchDecider.factory("voteSessionsService", ['$resource', '$log', function ($resource, $log) {
+    var voteSessionsApi = $resource(
         "/api/VoteSessions/:Id",
         { Id: "@voteSessionId" },
         { "update": { method: "PUT", params: { voteSessionId: "@Id" } } }
-   );
-});
-
-lunchDecider.factory("voteSessionsService", ['voteSessionsApi', '$log', function (voteSessionsApi, $log) {
+    );
     var result = {};
     result.getVoteSessions = function(success, error) {
         return voteSessionsApi.query(function() {
