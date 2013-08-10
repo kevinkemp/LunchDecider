@@ -1,4 +1,11 @@
-﻿lunchDecider.controller('RestaurantController', ['$scope', 'voteSessionsService', '$location', function ($scope, voteSessionsService, $location) {
+﻿lunchDecider.controller('LayoutController', ['$scope', function($scope) {
+    $scope.simpleLayout = {
+        headerUrl: '/app/layouts/header.html',
+        footerUrl: '/app/layouts/footer.html'
+    };
+}]);
+
+lunchDecider.controller('RestaurantController', ['$scope', 'voteSessionsService', '$location', function ($scope, voteSessionsService, $location) {
     window.scope = $scope;//for debugging
     
     $scope.voteSessionName = $location.search().voteSession;
