@@ -6,40 +6,35 @@
    );
 });
 
-lunchDecider.factory("voteSessionsService", ['voteSessionsApi', function (voteSessionsApi) {
-    function log(message) {
-        if (console) {
-            console.log(message);
-        }
-    }
+lunchDecider.factory("voteSessionsService", ['voteSessionsApi', '$log', function (voteSessionsApi, $log) {
     var result = {};
     result.getVoteSessions = function(success, error) {
         return voteSessionsApi.query(function() {
             if (success) success();
-            log('fetched all vote sessions!');
+            $log.info('fetched all vote sessions!');
         });
     };
     result.getVoteSession = function(params, success) {
         return voteSessionsApi.get(params, function() {
             if (success) success();
-            log('fetched vote session!');
+            $log.info('fetched vote session!');
         });
     };
     result.vote = function(params, restaurant, success) {
         return voteSessionsApi.update(params, restaurant, function() {
             if (success) success();
-            log('updated restaurant vote count!');
+            $log.info('updated restaurant vote count!');
         });
     };
     result.createVoteSession = function (newVoteSession, success, error) {
         return voteSessionsApi.save(newVoteSession,
             function(foo) {
                 if (success) success();
-                log("saved vote session!");
+                $log.info("saved vote session!");
             },
             function (foo) {
                 if (error) error();
-                log('failed to save vote session!');
+                $log.info('failed to save vote session!');
             });
     };
     return result;
