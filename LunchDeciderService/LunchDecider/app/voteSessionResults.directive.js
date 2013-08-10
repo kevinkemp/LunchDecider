@@ -6,7 +6,7 @@
         transclude: false,//default
         restrict: 'E',
         scope: true,
-        link: function(scope, element, attrs) {
+        link: function (scope, element, attrs) {
             var counts = _.map(scope.voteSession.VoteOptions, function(voteOption) {
                 return voteOption.Count;
             });
@@ -17,7 +17,7 @@
                 labels: restaurantNames,
                 datasets: [
                     {
-                        fillColor: "rgba(220,220,220,0.5)",
+                        fillColor: "rgba(85,107,47,1)",
                         strokeColor: "rgba(220,220,220,1)",
                         pointColor: "rgba(220,220,220,1)",
                         pointStrokeColor: "#fff",
@@ -41,7 +41,7 @@
                 scaleStartValue: 0,
 
                 //String - Colour of the scale line	
-                scaleLineColor: "rgba(0,0,0,.1)",
+                scaleLineColor: "rgba(0,0,0,.5)",
 
                 //Number - Pixel width of the scale line	
                 scaleLineWidth: 1,
@@ -68,7 +68,7 @@
                 scaleShowGridLines: false,
 
                 //String - Colour of the grid lines
-                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleGridLineColor: "rgba(0,0,0,.2)",
 
                 //Number - Width of the grid lines
                 scaleGridLineWidth: 1,
