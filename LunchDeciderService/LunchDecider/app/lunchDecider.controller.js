@@ -1,7 +1,7 @@
 ﻿lunchDecider.controller('LayoutController', ['$scope', function($scope) {
-    $scope.simpleLayout = {
-        headerUrl: '/app/layouts/header.html',
-        footerUrl: '/app/layouts/footer.html'
+    $scope.demoLayout = {
+        headerUrl: '/app/layouts/demo/header.html',
+        footerUrl: '/app/layouts/demo/footer.html'
     };
 }]);
 
@@ -9,21 +9,26 @@ lunchDecider.controller('RestaurantController', ['$scope', 'voteSessionsService'
     window.scope = $scope;//for debugging
     
     $scope.voteSessionName = $location.search().voteSession;
-    
+
     var voteSession = voteSessionsService.getVoteSession({ name: $scope.voteSessionName }, function () {
         $scope.restaurants = _.map(voteSession.VoteOptions, function (voteOption) {
             return voteOption.Restaurant;
         });
+        $scope.selectedRestaurant = '';
     });
     
-    $scope.vote = function() {
-        _.each($scope.restaurants, function(restaurant) {
-            if (restaurant.isSelected) {
-                voteSessionsService.vote({ voteSessionId: $scope.voteSessionName }, restaurant, function () {
-                    $location.path('/voteSessionResultsList').search({ voteSession: $scope.voteSessionName });
-                });
-            }
+    $scope.vote = function () {
+        var selectedRestaurant = _.findWhere($scope.restaurants, { Name: $scope.selectedRestaurant });
+        voteSessionsService.vote({ voteSessionId: $scope.voteSessionName }, selectedRestaurant, function () {
+            $location.path('/voteSessionResultsList').search({ voteSession: $scope.voteSessionName });
         });
+        //_.each($scope.restaurants, function(restaurant) {
+        //    if (restaurant.isSelected) {
+        //        voteSessionsService.vote({ voteSessionId: $scope.voteSessionName }, restaurant, function () {
+        //            $location.path('/voteSessionResultsList').search({ voteSession: $scope.voteSessionName });
+        //        });
+        //    }
+        //});
     };
 }]);
 

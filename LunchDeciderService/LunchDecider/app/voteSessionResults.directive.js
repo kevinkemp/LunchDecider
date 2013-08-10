@@ -1,5 +1,5 @@
 ﻿lunchDecider.directive('voteSessionResults', function () {
-    var directiveDefinitionObject = {
+    var result = {
         priority: 0,
         templateUrl: 'app/voteSessionResults.view.html',
         replace: false,//default
@@ -104,5 +104,5 @@
             var myNewChart = new Chart(ctx).Bar(data, options);
         }
     };
-    return directiveDefinitionObject;
+    return result;
 });
