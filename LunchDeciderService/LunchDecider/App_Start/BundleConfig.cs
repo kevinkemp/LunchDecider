@@ -22,9 +22,6 @@ namespace LunchDecider
                         "~/Scripts/angular.js",
                         "~/Scripts/angular-resource.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/ajaxlogin").Include(
-                "~/app/ajaxlogin.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/lunchDecider").Include(
                 "~/app/lunchDecider.app.js", // must be first
                 "~/app/voteSessionResults.directive.js",

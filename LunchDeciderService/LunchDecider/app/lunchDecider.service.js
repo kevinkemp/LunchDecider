@@ -23,13 +23,13 @@
             $log.info('updated restaurant vote count!');
         });
     };
-    result.createVoteSession = function (newVoteSession, success, error) {
+    result.createVoteSession = function(newVoteSession, success, error) {
         return voteSessionsApi.save(newVoteSession,
-            function(foo) {
+            function() {
                 if (success) success();
                 $log.info("saved vote session!");
             },
-            function (foo) {
+            function() {
                 if (error) error();
                 $log.info('failed to save vote session!');
             });

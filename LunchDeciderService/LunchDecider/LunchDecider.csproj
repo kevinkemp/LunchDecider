@@ -262,7 +262,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="app\ajaxlogin.js" />
     <Content Include="app\lunchDecider.controller.js" />
     <Content Include="app\lunchDecider.app.js" />
     <Content Include="app\lunchDecider.service.js" />

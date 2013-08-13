@@ -22,13 +22,6 @@ lunchDecider.controller('RestaurantController', ['$scope', 'voteSessionsService'
         voteSessionsService.vote({ voteSessionId: $scope.voteSessionName }, selectedRestaurant, function () {
             $location.path('/voteSessionResultsList').search({ voteSession: $scope.voteSessionName });
         });
-        //_.each($scope.restaurants, function(restaurant) {
-        //    if (restaurant.isSelected) {
-        //        voteSessionsService.vote({ voteSessionId: $scope.voteSessionName }, restaurant, function () {
-        //            $location.path('/voteSessionResultsList').search({ voteSession: $scope.voteSessionName });
-        //        });
-        //    }
-        //});
     };
 }]);
 
